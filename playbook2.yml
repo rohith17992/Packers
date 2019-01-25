@@ -1,0 +1,9 @@
+- name: Install Common Utilities
+  yum: name={{ item }} state=installed
+  with_items:
+    - yum-utils
+    - python2-pip
+    - device-mapper-persistent-data
+    - lvm2
+    - nano
+  tags: RHEL

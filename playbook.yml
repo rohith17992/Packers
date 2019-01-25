@@ -1,0 +1,9 @@
+- name: Add docker repo to RHEL
+  yum_repository:
+    name: docker-ce
+    description: Docker YUM repo
+    baseurl: https://download.docker.com/linux/centos/7/$basearch/stable
+    gpgkey: https://download.docker.com/linux/centos/gpg
+    gpgcheck: yes
+  notify: yum-clean-metadata
+  tags: repos
